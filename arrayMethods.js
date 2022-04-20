@@ -63,9 +63,11 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-// const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+const totalPopulation = populations.reduce(function(acc, curr) {
+  return acc + curr
+})
 
-
+// console.log(totalPopulation)
 
 ////////// PROBLEM 4 //////////
 
@@ -88,9 +90,11 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-// const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+const myStrongest = monstersInYourPocket.filter(function(elem) {
+  return elem.CP > 200
+})
 
-
+// console.log(myStrongest)
 
 ////////// PROBLEM 5 //////////
 
@@ -106,8 +110,11 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
+const orderTotals = orders.map(function(elem) {
+  return elem.price + (elem.price * elem.tax)
+})
 
-
+// console.log(orderTotals)
 
 ////////// PROBLEM 6 //////////
 
@@ -126,3 +133,10 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+const totalPurchases = purchases.filter(function(elem, index){
+  return elem.owner === 'Bob'
+}).reduce(function(acc, curr){
+  return acc + 
+})
+
+console.log(totalPurchases)

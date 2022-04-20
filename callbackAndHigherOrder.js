@@ -6,14 +6,16 @@
 */
 
 // CODE HERE
+const multiply = (num1, num2, callback) => callback(num1 * num2)
 
+// console.log(4 * 6)
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
 // multiply(4, 3, answer => {
-//   console.log('The answer is ' + answer) //should console.log 12
+// console.log('The answer is ' + answer) //should console.log 12
 // })
 
 
@@ -36,15 +38,17 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+function first(arr,cb){
+  return cb(arr [0])
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// first(names, firstName => {
-//   console.log('The first name in names is ' + firstName)
-// })
+first(names, firstName => {
+  console.log('The first name in names is ' + firstName)
+})
 
 
 
@@ -56,15 +60,17 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+function last(arr,cb){
+  return cb(arr [6])
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// last(names, lastName => {
-//   console.log('The last name in names is ' + lastName)
-// })
+last(names, lastName => {
+  console.log('The last name in names is ' + lastName)
+})
 
 
 
@@ -78,19 +84,26 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+function contains(arr, name, cb){
+  if(arr.includes(name) === true){
+    cb(true)
+  } else {
+    cb(false)
+  }
+  
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// contains(names, 'Colt', result => {
-//   if(result === true){
-//     console.log('Colt is in the array')
-//   } else {
-//     console.log('Colt is not in the array')
-//   }
-// })
+contains(names, 'Colt', result => {
+  if(result === true){
+    console.log('Colt is in the array')
+  } else {
+    console.log('Colt is not in the array')
+  }
+})
 
 
 
@@ -103,7 +116,17 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+function uniq(arr,cb){
+  for(let i = 0; i < arr.length; i++) {
+    for(let x = i + 1; x < arr.length; x++){
+      if(arr[i] === arr[x]){
+        arr.splice(x, 1)
+        x--
+      }
+    }
+  }
+  cb(arr)
+}
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -112,7 +135,10 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+function uniq(names, cb){
+  cb(uniqArr)
+  console.log(`the new names array with all the duplicate items removed is ${uniqArr}`)
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -193,7 +219,12 @@ var users = [
 */
 
 // CODE HERE
-
+function addingFactory(num1){
+  return function(num2){
+    return num1 + num2
+  }
+    
+}
 /*
   Now that you have addingFactory, you can create other
   functions from it. 
