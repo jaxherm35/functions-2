@@ -133,10 +133,10 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
-const totalPurchases = purchases.filter(function(elem, index){
+const totalPurchases = purchases.filter(function(elem){
   return elem.owner === 'Bob'
 }).reduce(function(acc, curr){
-  return acc + 
-})
+  return acc + curr.price 
+},0)
 
 console.log(totalPurchases)
