@@ -135,11 +135,9 @@ function uniq(arr,cb){
 */
 
 // CODE HERE
-function uniq(names, uniqArr){
-  cb(uniqArr)
-  console.log(`the new names array with all the duplicate items removed is ${uniqArr}`)
-}
-
+uniq(names, (uniqArr) => {
+console.log(`the new names array with all the duplicate items removed is ${uniqArr}`)
+})
 
 ////////// PROBLEM 6 //////////
 
